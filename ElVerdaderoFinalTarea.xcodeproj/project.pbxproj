@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		10B3B62D1EAC1F6D0059B1E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B3B62C1EAC1F6D0059B1E5 /* AppDelegate.swift */; };
-		10B3B62F1EAC1F6D0059B1E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B3B62E1EAC1F6D0059B1E5 /* ViewController.swift */; };
 		10B3B6321EAC1F6D0059B1E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10B3B6301EAC1F6D0059B1E5 /* Main.storyboard */; };
 		10B3B6351EAC1F6D0059B1E5 /* ElVerdaderoFinalTarea.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10B3B6331EAC1F6D0059B1E5 /* ElVerdaderoFinalTarea.xcdatamodeld */; };
 		10B3B6371EAC1F6D0059B1E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10B3B6361EAC1F6D0059B1E5 /* Assets.xcassets */; };
 		10B3B63A1EAC1F6D0059B1E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10B3B6381EAC1F6D0059B1E5 /* LaunchScreen.storyboard */; };
+		10B3B6441EAC206D0059B1E5 /* TVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B3B6431EAC206D0059B1E5 /* TVC.swift */; };
+		10B3B6461EAC23AC0059B1E5 /* VistaDetalle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B3B6451EAC23AC0059B1E5 /* VistaDetalle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		10B3B6291EAC1F6C0059B1E5 /* ElVerdaderoFinalTarea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElVerdaderoFinalTarea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10B3B62C1EAC1F6D0059B1E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		10B3B62E1EAC1F6D0059B1E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		10B3B6311EAC1F6D0059B1E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		10B3B6341EAC1F6D0059B1E5 /* ElVerdaderoFinalTarea.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ElVerdaderoFinalTarea.xcdatamodel; sourceTree = "<group>"; };
 		10B3B6361EAC1F6D0059B1E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10B3B6391EAC1F6D0059B1E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		10B3B63B1EAC1F6D0059B1E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10B3B6431EAC206D0059B1E5 /* TVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVC.swift; sourceTree = "<group>"; };
+		10B3B6451EAC23AC0059B1E5 /* VistaDetalle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VistaDetalle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,12 +59,13 @@
 			isa = PBXGroup;
 			children = (
 				10B3B62C1EAC1F6D0059B1E5 /* AppDelegate.swift */,
-				10B3B62E1EAC1F6D0059B1E5 /* ViewController.swift */,
 				10B3B6301EAC1F6D0059B1E5 /* Main.storyboard */,
 				10B3B6361EAC1F6D0059B1E5 /* Assets.xcassets */,
 				10B3B6381EAC1F6D0059B1E5 /* LaunchScreen.storyboard */,
 				10B3B63B1EAC1F6D0059B1E5 /* Info.plist */,
 				10B3B6331EAC1F6D0059B1E5 /* ElVerdaderoFinalTarea.xcdatamodeld */,
+				10B3B6431EAC206D0059B1E5 /* TVC.swift */,
+				10B3B6451EAC23AC0059B1E5 /* VistaDetalle.swift */,
 			);
 			path = ElVerdaderoFinalTarea;
 			sourceTree = "<group>";
@@ -140,9 +143,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10B3B62F1EAC1F6D0059B1E5 /* ViewController.swift in Sources */,
 				10B3B6351EAC1F6D0059B1E5 /* ElVerdaderoFinalTarea.xcdatamodeld in Sources */,
+				10B3B6441EAC206D0059B1E5 /* TVC.swift in Sources */,
 				10B3B62D1EAC1F6D0059B1E5 /* AppDelegate.swift in Sources */,
+				10B3B6461EAC23AC0059B1E5 /* VistaDetalle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
