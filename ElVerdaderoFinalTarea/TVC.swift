@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 struct libDat {
     var isbn: String
     var titulo: String
@@ -22,7 +23,9 @@ struct libDat {
 }
 class TVC: UITableViewController {
     var libros : Array<Array<String>> = [["Cien años de soledad","978-84-376-0494-7"]]
-        
+    let appDelegate1 = UIApplication.shared.delegate as! AppDelegate
+    
+
     
     @IBOutlet weak var texto: UITextField!
     
@@ -42,6 +45,11 @@ class TVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //almacenando coredata
+        
+        
+        
+        
         self.title = "OpenLibrary" //Cambia nombre que aparecen en la flechitas de ir hacia atras
         print("Libros en TVC: \(coleccionLibros)")
        
@@ -153,6 +161,8 @@ cell.textLabel?.text = self.libros[indexPath.row][0]
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
+        
+        
         let destinaciondestination = segue.destination as! VistaDetalle
         if segue.identifier == "showDetails" {
          //  if let indexPath = tableView.indexPathForSelectedRow {
@@ -179,16 +189,6 @@ cell.textLabel?.text = self.libros[indexPath.row][0]
                     let autor2 = autor1["name"] as! String
                     aux.autores = autor2
                     print(autor2)
-                    /*for index in 0...autor1.count-1 {
-                        print(index)
-                        let nombre = autor1[index] as! [String : AnyObject]
-                        
-                        auttores.append(nombre["name"] as! String)
-                        
-                    }
- 
-                    aux.autores = auttores
-                    */
                     
                     let dico3 = dico1["title"] as! String
                     aux.titulo = dico3
@@ -208,6 +208,11 @@ cell.textLabel?.text = self.libros[indexPath.row][0]
                 }catch _ {
                     
                 }
+            print("sihixo busqueda")
+            print("akjhalkjshs")
+            print(".")
+            
+            
             //}
             
            // destinaciondestination.names = aux.autores
@@ -222,6 +227,21 @@ cell.textLabel?.text = self.libros[indexPath.row][0]
             libroz = self.coleccionLibros
             
             destinaciondestination.arregloLi = libroz
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            let newUser = NSEntityDescription.insertNewObject(forEntityName: "Celda", into: context)
+            newUser.setValue(aux.isbn, forKey: "isbn")
+            newUser.setValue(aux.titulo, forKey: "titulo")
+            newUser.setValue(aux.autores, forKey: "autor")
+            newUser.setValue(aux.portada, forKey: "imagen")
+            do{
+                try context.save()
+                print("SE SALVO LA NUEVA ENTRADA DE DATOS")
+            }
+            catch
+            {
+                //Procesar error
+            }
         }else if segue.identifier != "showDetails" {
             buscart = true
             let ip = self.tableView.indexPathForSelectedRow// nos va a decir el renglon de lo seleccionado
@@ -229,6 +249,40 @@ cell.textLabel?.text = self.libros[indexPath.row][0]
             print(self.libros[ip!.row][1])
             destinaciondestination.buscar = buscart
             destinaciondestination.arregloLi = coleccionLibros
+            let context = appDelegate1.persistentContainer.viewContext
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Celda")
+            request.returnsObjectsAsFaults = false
+            do{
+                let results = try context.fetch(request)
+                if results.count > 0{
+                    for result in results as! [NSManagedObject]{
+                        if let autor = result.value(forKey: "autor"){
+                            print(autor)
+                            destinaciondestination.libro.autores = autor as! String
+                            
+                        }
+                        if let titulo = result.value(forKey: "titulo"){
+                            print(titulo)
+                            destinaciondestination.libro.titulo = titulo as! String
+                            
+                        }
+                        if let isbn = result.value(forKey: "isbn"){
+                            print(isbn)
+                            destinaciondestination.libro.isbn = isbn as! String
+                            
+                        }
+                        if let portada = result.value(forKey: "imagen"){
+                            
+                            destinaciondestination.libro.portada = portada as? UIImage
+                            
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                //Procesar error
+            }
         }
         
     }

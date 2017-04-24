@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Celda" representedClassName="Celda" syncable="YES" codeGenerationType="class">
-        <attribute name="nombreCelda" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="autor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imagen" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="isbn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="titulo" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Imagen" representedClassName="Imagen" syncable="YES" codeGenerationType="class">
         <attribute name="nombreAutor" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="ISBN" representedClassName="ISBN" syncable="YES" codeGenerationType="class"/>
     <elements>
-        <element name="Celda" positionX="-63" positionY="-18" width="128" height="60"/>
+        <element name="Celda" positionX="-63" positionY="-18" width="128" height="105"/>
         <element name="Imagen" positionX="-54" positionY="0" width="128" height="60"/>
         <element name="ISBN" positionX="-36" positionY="9" width="128" height="45"/>
     </elements>
